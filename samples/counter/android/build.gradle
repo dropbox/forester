@@ -1,0 +1,17 @@
+plugins {
+    id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.serialization")
+    id("com.android.application")
+}
+
+dependencies {
+    implementation(libs.kotlinx.serialization.core)
+}
+
+android {
+    compileSdk = 33
+    compileSdkVersion = "android-33"
+    defaultConfig {
+        minSdk = 27
+    }
+}
