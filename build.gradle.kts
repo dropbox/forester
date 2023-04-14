@@ -29,12 +29,6 @@ allprojects {
     }
     group = project.property("GROUP") as String
     version = project.property("VERSION_NAME") as String
-
-    plugins.withId("com.vanniktech.maven.publish.base") {
-        configure<MavenPublishBaseExtension> {
-            publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
-        }
-    }
 }
 
 subprojects {

@@ -3,6 +3,7 @@
 import com.vanniktech.maven.publish.GradlePlugin
 import com.vanniktech.maven.publish.JavadocJar
 import com.vanniktech.maven.publish.MavenPublishBaseExtension
+import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
     id("org.jetbrains.kotlin.jvm")
@@ -53,4 +54,8 @@ configure<MavenPublishBaseExtension> {
             javadocJar = JavadocJar.Empty(), sourcesJar = true
         )
     )
+}
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.S01)
 }
