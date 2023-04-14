@@ -1,5 +1,3 @@
-@file:Suppress("UNCHECKED_CAST")
-
 package com.dropbox.forester.plugin
 
 import com.dropbox.forester.Forester
