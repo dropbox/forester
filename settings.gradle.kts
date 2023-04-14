@@ -18,7 +18,5 @@ rootProject.name = "forester"
 
 include(
     ":forester",
-    ":forester-gradle-plugin",
-    ":samples:counter:android",
-    ":samples:counter:common",
+    ":forester-gradle-plugin"
 )

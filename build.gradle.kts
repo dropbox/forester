@@ -11,8 +11,6 @@ buildscript {
         classpath(libs.kotlin.gradle.plugin)
         classpath(libs.android.gradle.plugin)
         classpath(libs.kotlin.serialization.plugin)
-        classpath("com.dropbox.forester:forester:0.0.1")
-        classpath("com.dropbox.forester:forester-gradle-plugin:0.0.1")
         classpath("org.ow2.asm:asm:9.4")
         classpath("org.ow2.asm:asm-util:9.4")
     }

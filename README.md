@@ -1,6 +1,6 @@
 # Forester
 
-<img src=".github/mapping_out_the_forest.png" alt="Mapping out the forest" height="450"/>
+<img src=".github/images/mapping_out_the_forest.png" alt="Mapping out the forest" height="450"/>
 
 ## Problem
 
@@ -87,7 +87,7 @@ class CounterGraph {
 }
 ```
 
-<img src=".github/sample_class.png" height="650"/>
+<img src=".github/images/sample_class.png" height="650"/>
 
 ## License
 
