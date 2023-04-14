@@ -11,8 +11,9 @@ buildscript {
         classpath(libs.kotlin.gradle.plugin)
         classpath(libs.android.gradle.plugin)
         classpath(libs.kotlin.serialization.plugin)
-        classpath("org.ow2.asm:asm:9.4")
-        classpath("org.ow2.asm:asm-util:9.4")
+        classpath(libs.gradle.maven.publish.plugin)
+        classpath(libs.asm)
+        classpath(libs.asm.util)
     }
 }
 
