@@ -3,25 +3,17 @@
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
-    id("org.jetbrains.kotlin.multiplatform")
+    id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("com.vanniktech.maven.publish")
     id("maven-publish")
 }
 
 
-kotlin {
-    jvm()
-
-    sourceSets {
-        commonMain {
-            dependencies {
-                implementation(libs.kotlinx.serialization.core)
-                implementation(libs.kotlinx.serialization.json)
-                implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
-            }
-        }
-    }
+dependencies {
+    implementation(libs.kotlinx.serialization.core)
+    implementation(libs.kotlinx.serialization.json)
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.10")
 }
 
 java {
