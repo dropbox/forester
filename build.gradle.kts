@@ -1,3 +1,5 @@
+import com.vanniktech.maven.publish.MavenPublishBaseExtension
+import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
@@ -17,6 +19,8 @@ buildscript {
     }
 }
 
+apply(plugin = "com.vanniktech.maven.publish.base")
+
 allprojects {
     repositories {
         google()
@@ -25,6 +29,13 @@ allprojects {
     }
     group = project.property("GROUP") as String
     version = project.property("VERSION_NAME") as String
+
+    plugins.withId("com.vanniktech.maven.publish.base") {
+        configure<MavenPublishBaseExtension> {
+            publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+            signAllPublications()
+        }
+    }
 }
 
 subprojects {

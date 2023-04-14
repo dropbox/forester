@@ -1,11 +1,14 @@
 @file:Suppress("UnstableApiUsage")
-import com.vanniktech.maven.publish.SonatypeHost
+
+import com.vanniktech.maven.publish.GradlePlugin
+import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.MavenPublishBaseExtension
 
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("java-gradle-plugin")
-    id("com.vanniktech.maven.publish")
+    id("com.vanniktech.maven.publish.base")
     id("maven-publish")
 }
 
@@ -44,7 +47,10 @@ tasks {
 
 }
 
-mavenPublishing {
-    publishToMavenCentral(SonatypeHost.S01)
-    signAllPublications()
+configure<MavenPublishBaseExtension> {
+    configure(
+        GradlePlugin(
+            javadocJar = JavadocJar.Empty(), sourcesJar = true
+        )
+    )
 }
