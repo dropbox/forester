@@ -41,3 +41,15 @@ tasks {
     }
 
 }
+
+
+publishing {
+    publications {
+        create<MavenPublication>("foresterGradlePluginMavenPublication") {
+            from(components["kotlin"])
+            groupId = group.toString()
+            artifactId = "forester-gradle-plugin"
+            version = version.toString()
+        }
+    }
+}

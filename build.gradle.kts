@@ -24,8 +24,8 @@ allprojects {
         mavenCentral()
         mavenLocal()
     }
-    group = "com.dropbox.forester"
-    version = "0.0.1"
+    group = project.property("GROUP") as String
+    version = project.property("VERSION_NAME") as String
 }
 
 subprojects {

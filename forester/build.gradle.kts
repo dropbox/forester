@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("org.jetbrains.kotlin.plugin.serialization")
@@ -24,4 +22,16 @@ kotlin {
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+
+publishing {
+    publications {
+        create<MavenPublication>("foresterMavenPublication") {
+            from(components["kotlin"])
+            groupId = group.toString()
+            artifactId = "forester"
+            version = version.toString()
+        }
+    }
 }
