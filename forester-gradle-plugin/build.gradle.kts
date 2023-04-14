@@ -2,7 +2,6 @@
 
 import com.vanniktech.maven.publish.GradlePlugin
 import com.vanniktech.maven.publish.JavadocJar
-import com.vanniktech.maven.publish.MavenPublishBaseExtension
 import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
@@ -48,14 +47,15 @@ tasks {
 
 }
 
-configure<MavenPublishBaseExtension> {
+
+mavenPublishing {
+
     configure(
         GradlePlugin(
             javadocJar = JavadocJar.Empty(), sourcesJar = true
         )
     )
-}
 
-mavenPublishing {
+
     publishToMavenCentral(SonatypeHost.S01)
 }

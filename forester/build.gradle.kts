@@ -5,7 +5,7 @@ import com.vanniktech.maven.publish.SonatypeHost
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
-    id("com.vanniktech.maven.publish.base")
+    id("com.vanniktech.maven.publish")
 }
 
 

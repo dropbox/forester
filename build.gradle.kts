@@ -19,7 +19,7 @@ buildscript {
     }
 }
 
-apply(plugin = "com.vanniktech.maven.publish.base")
+apply(plugin = "com.vanniktech.maven.publish")
 
 allprojects {
     repositories {
