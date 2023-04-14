@@ -1,6 +1,11 @@
+@file:Suppress("UnstableApiUsage")
+
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("org.jetbrains.kotlin.plugin.serialization")
+    id("com.vanniktech.maven.publish")
     id("maven-publish")
 }
 
@@ -25,13 +30,8 @@ java {
 }
 
 
-publishing {
-    publications {
-        create<MavenPublication>("foresterMavenPublication") {
-            from(components["kotlin"])
-            groupId = group.toString()
-            artifactId = "forester"
-            version = version.toString()
-        }
-    }
+
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.S01)
+    signAllPublications()
 }

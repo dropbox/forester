@@ -1,9 +1,11 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+@file:Suppress("UnstableApiUsage")
+import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("java-gradle-plugin")
+    id("com.vanniktech.maven.publish")
     id("maven-publish")
 }
 
@@ -42,14 +44,7 @@ tasks {
 
 }
 
-
-publishing {
-    publications {
-        create<MavenPublication>("foresterGradlePluginMavenPublication") {
-            from(components["kotlin"])
-            groupId = group.toString()
-            artifactId = "forester-gradle-plugin"
-            version = version.toString()
-        }
-    }
+mavenPublishing {
+    publishToMavenCentral(SonatypeHost.S01)
+    signAllPublications()
 }
