@@ -9,7 +9,6 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization")
     id("java-gradle-plugin")
     id("com.vanniktech.maven.publish.base")
-    id("maven-publish")
 }
 
 dependencies {
@@ -28,6 +27,7 @@ gradlePlugin {
     plugins {
         create("forester") {
             id = "com.dropbox.forester.plugin"
+            displayName = "forester"
             implementationClass = "com.dropbox.forester.plugin.ForesterPlugin"
         }
     }
