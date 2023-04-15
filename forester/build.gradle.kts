@@ -1,7 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-import com.vanniktech.maven.publish.SonatypeHost
-
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
@@ -18,8 +16,4 @@ dependencies {
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
-}
-
-mavenPublishing {
-    publishToMavenCentral(SonatypeHost.S01)
 }

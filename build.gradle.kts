@@ -19,7 +19,7 @@ buildscript {
     }
 }
 
-apply(plugin = "com.vanniktech.maven.publish")
+apply(plugin = "com.vanniktech.maven.publish.base")
 
 allprojects {
     repositories {
@@ -29,12 +29,11 @@ allprojects {
     }
     group = project.property("GROUP") as String
     version = project.property("VERSION_NAME") as String
-}
 
-subprojects {
-    tasks.withType<KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = "11"
+    plugins.withId("com.vanniktech.maven.publish") {
+        configure<MavenPublishBaseExtension> {
+            publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+            signAllPublications()
         }
     }
 }

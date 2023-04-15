@@ -1,5 +1,6 @@
 [versions]
 asm = "9.4"
+dagger = "2.45"
 kotlin = "1.8.10"
 kotlinx-serialization = "1.5.0"
 
@@ -12,3 +13,5 @@ android-gradle-plugin = { module = "com.android.tools.build:gradle", version = "
 gradle-maven-publish-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version = "0.22.0" }
 asm = { module = "org.ow2.asm:asm", version.ref = "asm" }
 asm-util = { module = "org.ow2.asm:asm-util", version.ref = "asm" }
+dagger = {module = "com.google.dagger:dagger", version.ref = "dagger"}
+dagger-spi = {module = "com.google.dagger:dagger-spi", version.ref = "dagger"}
