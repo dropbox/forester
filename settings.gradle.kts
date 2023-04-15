@@ -11,5 +11,6 @@ rootProject.name = "forester"
 
 include(
     ":forester",
-    ":forester-gradle-plugin"
+    ":forester-gradle-plugin",
+    ":forester-graph-plugin"
 )

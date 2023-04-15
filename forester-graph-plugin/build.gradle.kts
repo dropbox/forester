@@ -19,17 +19,6 @@ dependencies {
     implementation(libs.dagger.spi)
 }
 
-
-gradlePlugin {
-    plugins {
-        create("forester") {
-            id = "com.dropbox.forester.plugin"
-            displayName = "forester"
-            implementationClass = "com.dropbox.forester.plugin.ForesterPlugin"
-        }
-    }
-}
-
 tasks {
     compileKotlin {
         kotlinOptions {
