@@ -34,61 +34,6 @@ Forester keeps code and diagrams aligned:
 
 ## Usage
 
-```kotlin
-@Node
-@Undirected([Repository::class])
-interface Api {
-    suspend fun getCount(): Int
-    suspend fun setCount(count: Int)
-}
-```
-
-```kotlin
-@Node
-@Directed([ViewModel::class])
-interface Repository {
-    suspend fun getCount(): Result<Int>
-    suspend fun setCount(count: Int): Result<Int>
-}
-```
-
-```kotlin
-@Node
-interface ViewModel {
-    val state: StateFlow<State>
-    fun load()
-    fun on(event: Event)
-}
-```
-
-```kotlin
-@Forest
-object Server {
-    object Counter {
-        val subscribe = node("server.counter.subscribe", Shape.Cloud)
-    }
-}
-```
-
-```kotlin
-@Forest
-object Xplat {
-    object Counter {
-        val CounterScreen = node("xplat.counter.CounterScreen", Shape.Parallelogram)
-    }
-}
-```
-
-```kotlin
-@Graph
-class CounterGraph {
-    fun provide() = graph {
-        directed(Server.Counter.subscribe, Api::class)
-        directed(ViewModel::class, Xplat.Counter.CounterScreen)
-    }
-}
-```
-
 <img src=".github/images/sample_class.png" height="650"/>
 
 ## License
