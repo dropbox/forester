@@ -1,0 +1,25 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("com.squareup.anvil")
+    id("org.jetbrains.kotlin.plugin.serialization")
+}
+
+android {
+
+    defaultConfig {
+        minSdk = 27
+    }
+
+    compileSdk = 33
+    compileSdkVersion = "android-33"
+
+    namespace = "com.dropbox.pokedex.android.dig"
+}
+
+dependencies {
+    implementation(libs.dagger)
+    kapt(libs.dagger.compiler)
+    implementation(libs.kotlinx.serialization.core)
+}

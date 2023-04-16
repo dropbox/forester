@@ -6,6 +6,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
         mavenLocal()
     }
@@ -16,6 +17,8 @@ buildscript {
         classpath(libs.gradle.maven.publish.plugin)
         classpath(libs.asm)
         classpath(libs.asm.util)
+        classpath(libs.anvil.gradle.plugin)
+        classpath(libs.jetbrains.compose.gradle.plugin)
     }
 }
 
@@ -26,6 +29,8 @@ allprojects {
         google()
         mavenCentral()
         mavenLocal()
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+        maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
     group = project.property("GROUP") as String
     version = project.property("VERSION_NAME") as String
@@ -37,3 +42,6 @@ allprojects {
     }
 }
 
+plugins {
+    id("org.jetbrains.compose") apply false
+}
