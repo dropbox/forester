@@ -42,4 +42,5 @@ dependencies {
     implementation project(":android:lib:dig")
     implementation project(":android:lib:api")
     implementation libs.androidx.viewmodel.compose
+    implementation libs.lottie.compose
 }

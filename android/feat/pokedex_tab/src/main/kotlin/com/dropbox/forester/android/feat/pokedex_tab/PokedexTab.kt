@@ -6,6 +6,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -15,6 +16,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import coil.decode.SvgDecoder
 import coil.request.ImageRequest
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
 import com.dropbox.forester.android.api.entity.Pokemon
 import com.dropbox.forester.android.dig.Dig
 import com.dropbox.forester.android.dig.DigTypography
@@ -28,10 +33,21 @@ fun PokedexTab(viewModel: PokedexViewModel = viewModel()) {
         is PokedexViewState.Data -> PokedexData(viewState.pokemon)
         PokedexViewState.Failure -> Text("Failure")
         PokedexViewState.Initial -> Text("Initial")
-        PokedexViewState.Loading -> Text("Loading")
+        PokedexViewState.Loading -> Loading()
     }
+}
 
 
+@Composable
+fun Loading() {
+
+    val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.diglett_loading))
+    val progress by animateLottieCompositionAsState(composition)
+    LottieAnimation(
+        composition = composition,
+        progress = { progress },
+        modifier = Modifier.fillMaxSize()
+    )
 }
 
 @Composable
