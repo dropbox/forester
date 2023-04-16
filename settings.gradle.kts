@@ -22,6 +22,6 @@ include(
     ":android:common:api",
     ":android:common:scoping",
     ":android:feat:account_tab",
-    ":android:feat:home_tab",
+    ":android:feat:pokedex_tab",
     ":android:lib:dig"
 )

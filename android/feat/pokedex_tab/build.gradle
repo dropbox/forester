@@ -1,12 +1,11 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.squareup.anvil")
 }
 
 android {
-    namespace 'com.dropbox.forester.android.app'
 
     buildFeatures {
         compose = true
@@ -14,19 +13,22 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.4"
     }
-
     defaultConfig {
         minSdk = 27
     }
 
     compileSdk = 33
     compileSdkVersion = "android-33"
+
+    namespace = "com.dropbox.forester.android.feat.pokedex_tab"
 }
 
 dependencies {
     implementation libs.coil.compose
     implementation libs.coil.svg
+    implementation libs.google.material
     implementation libs.kotlinx.coroutines.android
+    implementation project(":android:common:api")
     implementation libs.androidx.activity.compose
     implementation libs.androidx.appCompat
     implementation libs.androidx.core
@@ -34,12 +36,8 @@ dependencies {
     implementation libs.jetbrains.compose.ui
     implementation libs.androidx.compose.navigation
     implementation libs.androidx.compose.material3
-    implementation project(":android:lib:dig")
     implementation project(":android:common:scoping")
-    implementation project(":android:common:api")
-    implementation project(":android:feat:account_tab")
-    implementation project(":android:feat:pokedex_tab")
-    implementation(libs.dagger)
-    kapt(libs.dagger.compiler)
-    implementation libs.google.material
+    implementation libs.dagger
+    kapt libs.dagger.compiler
+    implementation project(":android:lib:dig")
 }
