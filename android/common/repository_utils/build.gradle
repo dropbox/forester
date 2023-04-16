@@ -1,0 +1,16 @@
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+    defaultConfig {
+        minSdk = 27
+    }
+    compileSdk = 33
+    compileSdkVersion = "android-33"
+    namespace = "com.dropbox.forester.android.repository_utils"
+}
+
+dependencies {
+}

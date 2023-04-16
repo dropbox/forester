@@ -1,4 +1,4 @@
-package com.dropbox.forester.android.api
+package com.dropbox.forester.android.api.entity
 
 import kotlinx.serialization.Serializable
 
@@ -6,5 +6,6 @@ import kotlinx.serialization.Serializable
 data class User(
     val id: String,
     val name: String,
-    val avatarUrl: String,
+    val email: String,
+    val avatarUrl: String
 )

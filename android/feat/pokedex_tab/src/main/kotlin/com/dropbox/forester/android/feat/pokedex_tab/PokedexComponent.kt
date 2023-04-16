@@ -1,25 +1,22 @@
-package com.dropbox.forester.android.app.wiring
+package com.dropbox.forester.android.feat.pokedex_tab
 
-import com.dropbox.forester.android.api.entity.User
 import com.dropbox.forester.android.scoping.AppScope
 import com.dropbox.forester.android.scoping.SingleIn
 import com.dropbox.forester.android.scoping.UserScope
 import com.squareup.anvil.annotations.ContributesSubcomponent
 import com.squareup.anvil.annotations.ContributesTo
-import dagger.BindsInstance
+
 
 @SingleIn(UserScope::class)
 @ContributesSubcomponent(scope = UserScope::class, parentScope = AppScope::class)
-interface UserComponent {
+interface PokedexComponent {
     @ContributesSubcomponent.Factory
     interface Factory {
-        fun create(
-            @BindsInstance user: User
-        ): UserComponent
+        fun create(): PokedexComponent
     }
 
     @ContributesTo(AppScope::class)
     interface ParentBindings {
-        fun userComponentFactory(): Factory
+        fun pokedexComponentBuilder(): Factory
     }
 }

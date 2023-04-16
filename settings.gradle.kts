@@ -19,9 +19,11 @@ include(
     ":forester-gradle-plugin",
     ":forester-graph-plugin",
     ":android:app",
-    ":android:common:api",
+    ":android:lib:api",
+    ":android:lib:api:impl",
     ":android:common:scoping",
     ":android:feat:account_tab",
     ":android:feat:pokedex_tab",
-    ":android:lib:dig"
+    ":android:lib:dig",
+    ":android:common:repository_utils"
 )

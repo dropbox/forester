@@ -28,7 +28,7 @@ dependencies {
     implementation libs.coil.svg
     implementation libs.google.material
     implementation libs.kotlinx.coroutines.android
-    implementation project(":android:common:api")
+    implementation project(":android:lib:api")
     implementation libs.androidx.activity.compose
     implementation libs.androidx.appCompat
     implementation libs.androidx.core
@@ -40,4 +40,6 @@ dependencies {
     implementation libs.dagger
     kapt libs.dagger.compiler
     implementation project(":android:lib:dig")
+    implementation project(":android:lib:api")
+    implementation libs.androidx.viewmodel.compose
 }

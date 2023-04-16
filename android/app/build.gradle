@@ -36,10 +36,16 @@ dependencies {
     implementation libs.androidx.compose.material3
     implementation project(":android:lib:dig")
     implementation project(":android:common:scoping")
-    implementation project(":android:common:api")
+    implementation project(":android:lib:api")
+    implementation project(":android:lib:api:impl")
     implementation project(":android:feat:account_tab")
     implementation project(":android:feat:pokedex_tab")
     implementation(libs.dagger)
+    implementation 'io.ktor:ktor-client-okhttp-jvm:2.2.4'
     kapt(libs.dagger.compiler)
     implementation libs.google.material
+    implementation libs.ktor.client.core
+    implementation libs.ktor.client.cio
+    implementation libs.ktor.client.content.negotiation
+    implementation libs.ktor.serialization.json
 }
