@@ -38,6 +38,7 @@ allprojects {
     plugins.withId("com.vanniktech.maven.publish") {
         configure<MavenPublishBaseExtension> {
             publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+            signAllPublications()
         }
     }
 }
