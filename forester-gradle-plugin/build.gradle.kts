@@ -24,7 +24,8 @@ gradlePlugin {
     plugins {
         create("forester") {
             id = "com.dropbox.forester.plugin"
-            displayName = "forester"
+            displayName = "Forester"
+            description = "Generates architecture diagrams based on code structure and annotations"
             implementationClass = "com.dropbox.forester.plugin.ForesterPlugin"
         }
     }
