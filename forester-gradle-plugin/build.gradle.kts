@@ -4,7 +4,6 @@ plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("java-gradle-plugin")
-    id("com.vanniktech.maven.publish")
 }
 
 dependencies {
@@ -19,17 +18,6 @@ dependencies {
     implementation(libs.dagger.spi)
 }
 
-
-gradlePlugin {
-    plugins {
-        create("forester") {
-            id = "com.dropbox.forester.plugin"
-            displayName = "Forester"
-            description = "Generates architecture diagrams based on code structure and annotations"
-            implementationClass = "com.dropbox.forester.plugin.ForesterPlugin"
-        }
-    }
-}
 
 tasks {
     compileKotlin {

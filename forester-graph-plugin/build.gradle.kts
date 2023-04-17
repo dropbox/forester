@@ -4,7 +4,6 @@ plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("java-gradle-plugin")
-    id("com.vanniktech.maven.publish")
 }
 
 dependencies {
