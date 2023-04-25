@@ -36,6 +36,17 @@ tasks {
     }
 }
 
+gradlePlugin {
+    plugins {
+        create("forester") {
+            id = "com.dropbox.forester.plugin"
+            displayName = "Forester"
+            description = "Generates architecture diagrams based on annotations and code structure"
+            implementationClass = "com.dropbox.forester.plugin.ForesterPlugin"
+        }
+    }
+}
+
 mavenPublishing {
     publishToMavenCentral(SonatypeHost.S01)
     signAllPublications()
