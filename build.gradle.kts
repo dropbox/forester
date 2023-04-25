@@ -22,8 +22,6 @@ buildscript {
     }
 }
 
-apply(plugin = "com.vanniktech.maven.publish.base")
-
 allprojects {
     repositories {
         google()
